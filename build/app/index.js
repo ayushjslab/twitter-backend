@@ -3,6 +3,7 @@ import { expressMiddleware } from '@as-integrations/express5';
 import bodyParser from "body-parser";
 import express from "express";
 import cors from "cors";
+import { prismaClient } from "../clients/db/index.js";
 export async function initServer() {
     const app = express();
     app.use(cors());

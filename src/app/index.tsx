@@ -3,10 +3,12 @@ import { expressMiddleware } from '@as-integrations/express5';
 import bodyParser from "body-parser";
 import express from "express";
 import cors from "cors";
+import { prismaClient } from "../clients/db/index.js";
 export async function initServer() {
     const app = express();
     app.use(cors());
     app.use(bodyParser.json());
+
     const graphqlServer = new ApolloServer({
         typeDefs: `type Query {
             hello: String
