@@ -1,0 +1,2 @@
+export declare const types = "#graphql\n    type User {\n        id: ID!\n        email: String!\n        firstName: String!\n        lastName: String\n        profileImageURL: String\n        coverImageURL: String\n    }\n\n";
+//# sourceMappingURL=types.d.ts.map
