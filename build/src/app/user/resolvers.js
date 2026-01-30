@@ -33,6 +33,13 @@ const queries = {
             throw new Error("User not found");
         const userToken = JWTService.generateTokenForUser(userInDB);
         return userToken;
+    },
+    getCurrentUser: async (parent, args, ctx) => {
+        const id = ctx?.user?.id;
+        if (!id)
+            return null;
+        const user = await prismaClient.user.findUnique({ where: { id } });
+        return user;
     }
 };
 export const resolvers = {
